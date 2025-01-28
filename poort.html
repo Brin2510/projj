@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <style>
+        /* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #121212; /* Dark theme background */
+    color: #e0e0e0; /* Light text for dark background */
+    line-height: 1.6;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* Navigation Bar */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #1d1d1d; /* Dark navigation bar */
+    padding: 15px 0;
+    z-index: 10;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #2575fc;
+}
+
+/* Header Section */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px 20px;
+    background-color: #1a1a1a; /* Dark header background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.header-content {
+    text-align: left;
+}
+
+.header-content h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #fff;
+    opacity: 0;
+    animation: fadeIn 1s forwards 0.5s;
+}
+
+.header-content .typed-output {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 30px;
+    color: #2575fc;
+    opacity: 0;
+    animation: fadeIn 1s forwards 1s;
+}
+
+.header-content p {
+    font-size: 1rem;
+    color: #e0e0e0;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeIn 1s forwards 1.5s;
+}
+
+button {
+    padding: 12px 20px;
+    background-color: #2575fc;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    opacity: 0;
+    animation: fadeIn 1s forwards 2s;
+}
+
+button:hover {
+    background-color: #6a11cb;
+}
+
+.social-links a {
+    margin: 0 10px;
+    color: #e0e0e0;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #2575fc;
+}
+
+.profile-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.5s ease;
+    animation: profileZoom 1s forwards 2s;
+}
+
+/* Animation for header elements */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes profileZoom {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Projects Section */
+#projects {
+    padding: 60px 0;
+    background-color: #1a1a1a;
+}
+
+#projects .section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: #fff;
+    opacity: 0;
+    animation: fadeIn 1s forwards 0.5s;
+}
+
+.project-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.project-card {
+    background-color: #2c2c2c;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 22%;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+}
+
+.project-card img {
+    width: 100%;
+    height: auto;
+    border-bottom: 2px solid #444;
+}
+
+.project-info {
+    padding: 20px;
+}
+
+.project-info h3 {
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+.project-info p {
+    color: #bbb;
+    margin: 10px 0;
+}
+
+.project-info a {
+    display: inline-block;
+    padding: 8px 20px;
+    background-color: #2575fc;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.project-info a:hover {
+    background-color: #6a11cb;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header-content {
+        text-align: center;
+    }
+
+    .profile-img {
+        margin-top: 20px;
+    }
+
+    .project-container {
+        flex-direction: column;
+    }
+
+    .project-card {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav id="navbar">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="about23.html">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header Section -->
+    <header id="home">
+        <div class="container">
+            <div class="header-content">
+                <h1>Hi There, I'm <span id="name">Brindha</span></h1>
+                <div class="typed-output"></div>
+                <p>I Am Into Web Development</p>
+                <button onclick="window.location.href='about23.html'">About Me</button>
+                
+            </div>
+            <img src="https://img.freepik.com/premium-photo/girl-with-black-hoodie-that-says-anime-it_1165411-6374.jpg" alt="Profile Image" class="profile-img">
+        </div>
+    </header>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">My Projects</h2>
+            <div class="project-container">
+                <div class="project-card">
+                    
+                    <div class="project-info">
+                        <h3>Productivity Tracker</h3>
+                        <p>
+                            Developed a productivity tool to manage tasks, set goals, and track progress.</p>
+                        <a href="#">View Project</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    
+                    <div class="project-info">
+                        <h3>To-Do List Web Application</h3>
+                        <p>Built a fuctional to-do list app where users can add,update and delete tasks to priortize works and task efficiently.</p>
+                        <a href="#">View Project</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    
+                    <div class="project-info">
+                        <h3>Mindfulness Website</h3>
+                        <p>Built a responsive mental Health website offering tools to support mental-health well being.</p>
+                        <a href="#">View Project</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    
+                    <div class="project-info">
+                        <h3>Student DropOut Predictor</h3>
+                        <p>Built a responsive Student Drop Out predictor using Python and flask to identify students at risk.</p>
+                        <a href="#">View Project</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+
+    <script src="script.js"></script>
+    <script>
+        // Initialize Typed.js for the animated text
+var typed = new Typed(".typed-output", {
+    strings: ["Web Developer", "Graphic Designer", "UI/UX Designer", "Freelancer"],
+    typeSpeed: 100, // Reduced typing speed to avoid blinking
+    backSpeed: 50,
+    loop: true,
+    showCursor: false
+});
+
+// Smooth scroll to the "About Me" section
+document.querySelector("button").addEventListener("click", function () {
+    document.querySelector("#about").scrollIntoView({ behavior: 'smooth' });
+});
+
+    </script>
+    <footer>
+        <div class="social-links">
+            <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+            <a href="https://github.com" target="_blank">GitHub</a>
+            <a href="https://twitter.com" target="_blank">Twitter</a>
+            <a href="https://telegram.org" target="_blank">Telegram</a>
+            <a href="https://instagram.com" target="_blank">Instagram</a>
+            <a href="https://dev.to" target="_blank">Dev.to</a>
+        </div>
+    </footer>
+</body>
+</html>
